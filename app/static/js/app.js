@@ -40,5 +40,9 @@ function getInfo(imgSrc,productPrice)
     `;
 
     productList.innerHTML += newProduct;
+
 }
+
+
+    
 
