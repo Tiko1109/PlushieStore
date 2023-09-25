@@ -1,0 +1,78 @@
+{% extends 'layouts/base.html' %}
+
+
+
+
+{% block main %}
+    <main>
+        <div class="container profile-container">
+            <h1>ჩემი ანგარიში</h1>
+            <details>
+                <summary>პერსონალური ინფორმაცია</summary>
+                <form class="summary-inner">
+                    <div class="personal-data">
+                            <label id="email" for="umail">ელფოსტა</label>
+                            <div class="editableinfo" contenteditable>tiko.barnabishvili@gmail.com</div>
+                    </div>
+                    <div class="personal-data">
+                            <label id="phonenumber" for="uphone">ტელეფონის ნომერი</label>
+                            <div class="editableinfo" contenteditable>557177017</div>
+                    </div>
+                    <div class="personal-data">
+                            <label id="fullname" for="ufullname">სახელი და გვარი</label>
+                            <div class="editableinfo" contenteditable>თამარ ბარნაბიშვილი</div>
+                    </div>
+                <button>შენახვა</button>
+                </form>
+                </details>
+            <details>
+            <summary>ჩემი შეკვეთები</summary>
+            <details class="order">
+                <summary class="order-info">
+                    <div>
+                    <span>შეკვეთის ნომერი:</span>
+                    <span class="order-detail">123</span>
+                    </div>
+                    <div class="order-status">
+                        <span>შეკვეთის სტატუსი:</span>
+                        <span class="status-defined">მიტანილი</span>
+                    </div>
+                    <div>
+                        <span>შეკვეთის თარიღი:</span>
+                        <span class="order-detail">25.09.2023</span>
+                    </div>
+                </summary>
+                <div class="summary-inner">
+                    <div class="order-inner">
+                        <div class="order-image">
+                            <img src="../img/products/bunny-purple.jpg" alt="purple bunny toy">
+                        </div>
+                        <div class="order-product">
+                            <span>იასამნისფერი ბაჭია</span>
+                            <span>35ლ</span>
+                        </div>
+                    </div>
+                    <div class="order-inner">
+                        <div class="order-image">
+                            <img src="../img/products/giraffe.jpg" alt="giraffe toy">
+                        </div>
+                        <div class="order-product">
+                            <span>ჟირაფი</span>
+                            <span>40ლ</span>
+                        </div>
+                    </div>
+                    <div class="order-recipient">
+                        <span>მიმღები:</span>
+                        <span>თამარ ბარნაბიშვილი</span>
+                    </div>
+                    <div class="order-address">
+                        <span>მისამართი:</span>
+                        <span>ვაკე, ზ.ფალიაშვილის 38</span>
+                    </div>
+                </div>
+            </details>
+            </details>
+        </div>
+
+    </main>
+    {% endblock %}

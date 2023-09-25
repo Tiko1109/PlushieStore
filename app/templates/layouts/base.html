@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Ami gurumi Tbilisi{% endblock %}</title>
+    <title>{% block title %}Amigurumi Tbilisi{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="description"
@@ -21,7 +21,7 @@
 <body>
 {% if request.url == "http://127.0.0.1:5000/" %}
     <div class="animation">
-        <h1>Ami gurumi Tbilisi</h1>
+        <h1>Amigurumi Tbilisi</h1>
     </div>
 {% endif %}
 <header>
@@ -83,9 +83,11 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <p id="emptyCart">{{_('კალათა ცარიელია')}}</p>
+            <div class="added-products-list">
+            </div>
             <div>
-                <a id="bunnyButton" href="{{ url_for('product.category', category_id=1) }}">{{_('აირჩიე ბაჭია')}}</a>
-                <a id="animalButton" href="{{ url_for('product.category', category_id=2) }}">{{_('აირჩიე სხვა ცხოველი')}}</a>
+                <a id="choosetoy" href="{{ url_for('admin.index') }}">{{_('აირჩიე სათამაშო')}}</a>
+                <a id="placeorder" href="{{ url_for('product.cart') }}">{{_('გააფორმე შეკვეთა')}}</a>
             </div>
         </div>
     </div>

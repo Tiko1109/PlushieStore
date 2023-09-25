@@ -27,7 +27,7 @@
                     <div>
                         <span>{{ toy.price }}₾</span>
                         <a id="buyA">
-                            <button class="add-to-cart" id="buyButton">{{_('შეძენა')}}</button>
+                            <button class="add-to-cart" id="buyButton" onclick="getInfo('{{toy.photo}}', '{{toy.price}}')">{{_('შეძენა')}}</button>
                         </a>
                     </div>
                 </div>
