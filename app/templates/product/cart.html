@@ -1,0 +1,70 @@
+{% extends 'layouts/base.html' %}
+
+
+{% block main %}
+    <main>
+        <div class="container cart-container">
+            <a class="go-back" href="../..">
+                <img src="{{ url_for('static', filename='img/icons/arrow.png') }}" alt="back arrow">
+            </a>
+            <h1 id="cartTitle">{{_('კალათი')}}</h1>
+            <div class="cart-products">
+                <div class="cart-product-image">
+                <img id="cartImg" src="" alt="purple bunny toy">
+                </div>
+                <div class="cart-details">
+                    <div>
+                    <span id="cartAmount">{{_('რაოდენობა')}}:</span>
+                    <span id="amountNum">{{_('1')}}</span>
+                    </div>
+                    <div>
+                    <span id="cartPrice">{{_('ღირებულება')}}:</span>
+                    <span id="priceNum">{{_('35')}}</span>
+                    <span>{{_('₾')}}</span>
+                    </div>
+                    <div>
+                        <button id="remove">{{_('წაშალე')}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="total">
+                <span id="total">{{_('ჯამი:')}}</span>
+                <span id="sum">{{_('35')}}</span>
+                <span>{{_('₾')}}</span>
+                </div>
+            <form class="place-order" action="#">
+                <div class="sender-info">
+                <div class="sender-name">
+                    <label id="LSName" for="sname">{{_('შემკვეთის სახელი და გვარი')}}</label>
+                    <input type="text" id="sname" name="sname" required>
+                </div>
+                <div class="sender-phone">
+                    <label id="LSPhone" for="phone">{{_('შემკვეთის ტელეფონი')}}</label>
+                    <input type="number" id="phone" name="phone" required>
+                </div>
+                <div class="email">
+                    <label id="LSEmail" for="email">{{_('შემკვეთის ელფოსტა')}}</label>
+                    <input type="text" id="email" name="email" required> 
+                </div>
+            </div>
+            <div class="recipient-info">
+                <div class="recipient-name">
+                    <label id="LRName" for="rname">{{_('მიმღების სახელი და გვარი')}}</label>
+                    <input type="text" id="rname" name="rname" required>
+                </div>
+                <div class="recipient-phone">
+                    <label id="LRPhone" for="rphone">{{_('მიმღების ტელეფონი')}}</label>
+                    <input type="number" id="rphone" name="rphone" required>
+                </div>
+                <div class="delivery-address">
+                    <label id="LRAddress" for="message">{{_('მიმღების მისამართი')}}</label>
+                    <input type="text" id="adress" name="adress" required>
+                </div>
+            </div>
+            <div class="pay">
+                <button id="cartPay">{{_('გადახდა')}}</button>
+            </div>
+            </form>
+        </div>
+    </main>
+    {% endblock %}
