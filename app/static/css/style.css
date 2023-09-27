@@ -1036,6 +1036,10 @@ summary {
     cursor: pointer;
 }
 
+.summary-inner input {
+    text-align: center;
+}
+
 .summary-inner button {
     height: 2rem;
     background-color: var(--background-color);

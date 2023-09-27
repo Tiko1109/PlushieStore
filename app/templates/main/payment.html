@@ -1,21 +1,22 @@
 {% extends 'layouts/base.html' %}
 
 
-
-
 {% block main %}
-    <main>
-        <div class="container">
-            <div class="payment-successful">
+<main>
+    <div class="container">
+        {% if status == 'successful' %}
+        <div class="payment-successful">
             <h2>გადახდა წარმატებულია! </h2>
-            <p>შეკვეთის სტატუსის შესახებ ინფორმაცია იხილეთ თქვენს პროფილში, 
-                <a href="profile.html#myorders">შეკვეთების ჩანართში</a></p>
-            </div>
-            <div class="payment-unsuccessful">
-                <h2>გადახდა ვერ განხორციელდა</h2>
-                <p>გთხოვთ, 
-                    <a href="cart.html">სცადეთ ხელახლა</a> </p>
-                </div>
+            <p>შეკვეთის სტატუსის შესახებ ინფორმაცია იხილეთ თქვენს პროფილში,
+                <a href="{{ url_for('main.profile') }}">შეკვეთების ჩანართში</a></p>
         </div>
-    </main>
-    {% endblock %}
+        {% else %}
+        <div class="payment-unsuccessful">
+            <h2>გადახდა ვერ განხორციელდა</h2>
+            <p>გთხოვთ,
+                <a href="cart.html">სცადეთ ხელახლა</a></p>
+        </div>
+        {% endif %}
+    </div>
+</main>
+{% endblock %}

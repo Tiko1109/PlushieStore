@@ -59,4 +59,6 @@ class Order(db.Model, BaseModel):
     order_date = db.Column(db.DateTime, nullable=False)
     delivery_date = db.Column(db.DateTime, nullable=False)
     admin_note = db.Column(db.String)
+    user_id = db.Column(db.ForeignKey("users.id", name="fk_order_user"))
+    user = db.relationship("User", uselist=False)
 
