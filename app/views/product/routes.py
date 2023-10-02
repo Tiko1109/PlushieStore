@@ -38,29 +38,29 @@ def view_product(id):
 # ]
 
 
-@product_blueprint.route("/cart")
-def cart():
-    items_info = request.json
-    cart_items = []
-    for req in items_info:
-        toy = Toy.query.get(req["id"])
-        item = {
-            "id": toy.id,
-            "photo": toy.photo,
-            "name_geo": toy.name_geo,
-            "name_eng": toy.name_eng,
-            "desc_geo": toy.desc_geo,
-            "desc_eng": toy.desc_eng,
-            "price": toy.price,
-            "stock": req["stock"],
-            "is_popular": toy.is_popular,
-            "meta_geo": toy.meta_geo,
-            "meta_eng": toy.meta_eng,
-            "category_id": toy.category_id
-        }
-        cart_items.append(item)
-
-    return jsonify(cart_items), 200
+# @product_blueprint.route("/cart", methods=['GET', 'POST'])
+# def cart():
+#     items_info = request.json
+#     cart_items = []
+#     for req in items_info:
+#         toy = Toy.query.get(req["id"])
+#         item = {
+#             "id": toy.id,
+#             "photo": toy.photo,
+#             "name_geo": toy.name_geo,
+#             "name_eng": toy.name_eng,
+#             "desc_geo": toy.desc_geo,
+#             "desc_eng": toy.desc_eng,
+#             "price": toy.price,
+#             "stock": req["stock"],
+#             "is_popular": toy.is_popular,
+#             "meta_geo": toy.meta_geo,
+#             "meta_eng": toy.meta_eng,
+#             "category_id": toy.category_id
+#         }
+#         cart_items.append(item)
+#
+#     return jsonify(cart_items), 200
 
 
 @product_blueprint.route("/delete/<int:id>")
@@ -74,3 +74,8 @@ def delete_toy(id):
                 item["stock"] -= 1
 
     return jsonify(items_info), 200
+
+
+@product_blueprint.route("/cart", methods=['GET', 'POST'])
+def cart():
+ return render_template("cart.html")

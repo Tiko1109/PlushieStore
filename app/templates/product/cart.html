@@ -10,28 +10,42 @@
             <h1 id="cartTitle">{{_('კალათი')}}</h1>
             <div class="cart-products">
                 <div class="cart-product-image">
-                <img id="cartImg" src="" alt="purple bunny toy">
+                <img src="" alt="purple bunny toy">
                 </div>
                 <div class="cart-details">
                     <div>
-                    <span id="cartAmount">{{_('რაოდენობა')}}:</span>
-                    <span id="amountNum">{{_('1')}}</span>
+                    <span>{{_('რაოდენობა')}}:</span>
+                    <span>1</span>
                     </div>
                     <div>
-                    <span id="cartPrice">{{_('ღირებულება')}}:</span>
-                    <span id="priceNum">{{_('35')}}</span>
+                    <span>{{_('ფასი')}}:</span>
+                    <span>10</span>
                     <span>{{_('₾')}}</span>
                     </div>
                     <div>
-                        <button id="remove">{{_('წაშალე')}}</button>
+                        <button>{{_('წაშალე')}}</button>
                     </div>
                 </div>
             </div>
-            <div class="total">
-                <span id="total">{{_('ჯამი:')}}</span>
-                <span id="sum">{{_('35')}}</span>
-                <span>{{_('₾')}}</span>
+            <div class="cart-products">
+                <div class="cart-product-image">
+                <img src="" alt="purple bunny toy">
                 </div>
+                <div class="cart-details">
+                    <div>
+                    <span>{{_('რაოდენობა')}}:</span>
+                    <span>1</span>
+                    </div>
+                    <div>
+                    <span>{{_('ფასი')}}:</span>
+                    <span>10</span>
+                    <span>{{_('₾')}}</span>
+                    </div>
+                    <div>
+                        <button>{{_('წაშალე')}}</button>
+                    </div>
+                </div>
+            </div>
             <form class="place-order" action="#">
                 <div class="sender-info">
                 <div class="sender-name">
@@ -57,14 +71,23 @@
                     <input type="number" id="rphone" name="rphone" required>
                 </div>
                 <div class="delivery-address">
-                    <label id="LRAddress" for="message">{{_('მიმღების მისამართი')}}</label>
+                    <label id="LRAddress" for="adress">{{_('მიმღების მისამართი')}}</label>
                     <input type="text" id="adress" name="adress" required>
                 </div>
             </div>
-            <div class="pay">
-                <button id="cartPay">{{_('გადახდა')}}</button>
+            <div class="delivery-city">
+                <label for="city">{{_('მიწოდების ქალაქი')}}</label>
+                <input type="text" id="city" name="city" required>
             </div>
             </form>
+            <div class="total">
+                <span id="total">{{_('ჯამი:')}}</span>
+                <span id="sum">22</span>
+                <span>{{_('₾')}}</span>
+            </div>
+                <div class="pay">
+                    <button id="cartPay">{{_('გადახდა')}}</button>
+                </div>
         </div>
     </main>
     {% endblock %}

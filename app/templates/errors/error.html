@@ -1,0 +1,14 @@
+{% extends "layouts/base.html" %}
+{% block main %}
+<main>
+    <div class="error-container">
+        <h1 id="titleerror">გვერდი ვერ მოიძებნა</h1>
+        <div>
+            <span id="texterror">
+                გვერდი, რომელსაც ეძებთ, არ არის ხელმისაწვდომი. გთხოვთ დაბრუნდით
+            </span>
+            <a id="actionerror" href="{{url_for('main.home')}}">მთავარ გვერდზე</a>
+        </div>
+    </div>
+</main>
+{% endblock %}

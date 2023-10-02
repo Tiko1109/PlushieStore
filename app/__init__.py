@@ -2,12 +2,12 @@ from flask import Flask, session
 from app.config import Config
 from app.extensions import db, login_manager, migrate, ckeditor, babel
 from app.commands import init_db, populate_db
-from app.views import main_blueprint, product_blueprint, auth_blueprint
+from app.views import main_blueprint, product_blueprint, auth_blueprint, error_blueprint
 from app.admin import admin, SecureModelView, UserView, CityView, OrderView, ToyView, ToyCategoryView
 from app.models import User, Order, Toy, ToyCategory, City
 from flask_admin.menu import MenuLink
 
-BLUEPRINTS = [main_blueprint, auth_blueprint, product_blueprint]
+BLUEPRINTS = [main_blueprint, auth_blueprint, product_blueprint, error_blueprint]
 COMMANDS = [init_db, populate_db]
 
 
