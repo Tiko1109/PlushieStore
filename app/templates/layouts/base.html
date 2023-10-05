@@ -82,12 +82,12 @@
     <div class="modal" id="myModal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p id="emptyCart">{{_('კალათა ცარიელია')}}</p>
+            <p id="emptyCart">{{_('არჩეული პროდუქცია')}}</p>
             <div class="added-products-list">
             </div>
             <div>
                 <a id="choosetoy" href="{{ url_for('admin.index') }}">{{_('აირჩიე სათამაშო')}}</a>
-                <a id="placeorder" href="{{ url_for('product.cart') }}">{{_('გააფორმე შეკვეთა')}}</a>
+                <a id="placeorder" href="">{{_('გააფორმე შეკვეთა')}}</a>
             </div>
         </div>
     </div>
