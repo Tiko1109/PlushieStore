@@ -9,6 +9,7 @@
     --size-18: 18px;
 }
 
+
 @font-face {
     font-family: 'Handlee';
     src: url(../fonts/Handlee-Regular.ttf);
@@ -593,7 +594,7 @@ footer a {
 
 .pay {
     text-align: center;
-}
+    }
 
 .pay button {
     background-color: var(--text-color);
@@ -1539,3 +1540,4 @@ summary {
         padding: 38% 2rem;
     }
 }
+
