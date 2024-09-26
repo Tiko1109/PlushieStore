@@ -371,6 +371,10 @@ footer {
     max-height: 70px;
     min-height: 70px;
     border-top: 1px solid var(--text-color);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
 }
 
 footer nav {
