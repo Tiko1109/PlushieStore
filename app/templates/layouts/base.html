@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Amigurumi Tbilisi{% endblock %}</title>
+    <title>{% block title %} Amigurumi Tbilisi {% endblock %}</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MFMNTRZ3');</script>
+    <!-- End Google Tag Manager -->
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <meta name="description"
@@ -19,17 +28,23 @@
     <meta property="og:image" content=""/>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MFMNTRZ3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 {% if request.url == "http://127.0.0.1:5000/" %}
-    <div class="animation">
-        <h1>Amigurumi Tbilisi</h1>
-    </div>
+<div class="animation">
+    <h1>Amigurumi Tbilisi</h1>
+</div>
 {% endif %}
 <header>
     <nav>
         <div class="header-container">
             <ul class="languages">
-                <li><a href="{{ url_for('main.change_language') }}" {% if session['locale'] == 'EN' %} style="pointer-events: none"{% else %}style=""{% endif %}>KA</a></li>
-                <li><a href="{{ url_for('main.change_language') }}" {% if session['locale'] == 'KA' %} style="pointer-events: none"{% else %}style=""{% endif %}>EN</a></li>
+                <li><a href="{{ url_for('main.change_language') }}" {% if session['locale'] == 'EN' %}
+                    style="pointer-events: none"{% else %}style=""{% endif %}>KA</a></li>
+                <li><a href="{{ url_for('main.change_language') }}" {% if session['locale'] == 'KA' %}
+                    style="pointer-events: none"{% else %}style=""{% endif %}>EN</a></li>
             </ul>
             <ul class="pages">
 
@@ -42,7 +57,8 @@
                 </a>
             </div>
             <ul class="pages">
-                <li><a id="deliveryTab" href="{{ url_for('main.home') }}#delivery-service">{{_('მიტანის სერვისი')}}</a></li>
+                <li><a id="deliveryTab" href="{{ url_for('main.home') }}#delivery-service">{{_('მიტანის სერვისი')}}</a>
+                </li>
                 <li><a id="contactTab" href="{{ url_for('main.home') }}#contact-us">{{ _('კონტაქტი') }}</a></li>
             </ul>
             <div class="icons">
@@ -73,7 +89,8 @@
         <ul class="nav-links">
             <li><a id="login" href="{{ url_for('auth.login') }}">{{_('ავტორიზაცია')}}</a></li>
             <li><a id="burgerBunnies" href="{{ url_for('product.category', category_id=1) }}">{{_('ბაჭიები')}}</a></li>
-            <li><a id="burgerAnimals" href="{{ url_for('product.category', category_id=2) }}">{{_('ცხოველები')}}</a></li>
+            <li><a id="burgerAnimals" href="{{ url_for('product.category', category_id=2) }}">{{_('ცხოველები')}}</a>
+            </li>
             <li><a id="burgerDelivery" href="#delivery-service">{{_('მიტანის სერვისი')}}</a></li>
             <li><a id="burgerContact" href="#contact-us">{{_('კონტაქტი')}}</a></li>
             <li><a id="burgerQuestions" href="{{ url_for('main.questions') }}">{{_('კითხვები')}}</a></li>
@@ -95,33 +112,37 @@
 {% block main %}
 
 {% endblock %}
- <footer id="contact-us">
-        <nav>
+<footer id="contact-us">
+    <nav>
         <div class="social-icons">
-            <a href="https://www.facebook.com/amigurumitbilisi/" >
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="133" height="129" viewBox="0 0 133 129">
-                <image width="133" height="129" xlink:href="data:img/png;base64,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"/>
-              </svg>
+            <a href="https://www.facebook.com/amigurumitbilisi/">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="133"
+                     height="129" viewBox="0 0 133 129">
+                    <image width="133" height="129"
+                           xlink:href="data:img/png;base64,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"/>
+                </svg>
             </a>
-            <a href="https://www.instagram.com/amigurumi_tbilisi/" >
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="133" height="133" viewBox="0 0 133 133">
-                <image x="1" y="1" width="131" height="131" xlink:href="data:img/png;base64,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"/>
-              </svg>
+            <a href="https://www.instagram.com/amigurumi_tbilisi/">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="133"
+                     height="133" viewBox="0 0 133 133">
+                    <image x="1" y="1" width="131" height="131"
+                           xlink:href="data:img/png;base64,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"/>
+                </svg>
             </a>
         </div>
         <div class="contact-details">
-        <address>
-            <a id="phone" href="tel:+995557177017">(995) 557 17 70 17</a>
-        </address>
-        <address>
-            <a id="mail" href="mailto:info@amigurumi.ge">info@amigurumi.ge</a>
-        </address>
+            <address>
+                <a id="phone" href="tel:+995557177017">(995) 557 17 70 17</a>
+            </address>
+            <address>
+                <a id="mail" href="mailto:info@amigurumi.ge">info@amigurumi.ge</a>
+            </address>
         </div>
         <a class="terms" id="termsTab" href="{{url_for('main.terms')}}">{{_('წესები და პირობები')}}</a>
     </nav>
-    </footer>
-    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+</footer>
+<script src="{{ url_for('static', filename='js/modal.js') }}"></script>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
 </body>
 </html>
