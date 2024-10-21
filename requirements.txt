@@ -8,3 +8,4 @@ Flask-CKEditor==0.4.6
 flask-babel==3.1.0
 gunicorn
 Pillow==9.5.0
+Werkzeug==2.3.8
